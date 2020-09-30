@@ -1,0 +1,132 @@
+2020-09-29 21:30:37,890 INFO    MainThread:286009 [wandb_init.py:_log_setup():307] Logging user logs to wandb/run-20200929_213037-3rrwznzz/logs/debug.log
+2020-09-29 21:30:37,891 INFO    MainThread:286009 [wandb_init.py:_log_setup():308] Logging internal logs to wandb/run-20200929_213037-3rrwznzz/logs/debug-internal.log
+2020-09-29 21:30:37,891 INFO    MainThread:286009 [wandb_setup.py:_flush():68] setting env: {}
+2020-09-29 21:30:37,891 INFO    MainThread:286009 [wandb_setup.py:_flush():68] setting user settings: {}
+2020-09-29 21:30:37,891 INFO    MainThread:286009 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-09-29 21:30:37,891 WARNING MainThread:286009 [wandb_setup.py:_flush():68] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-29 21:30:37,891 INFO    MainThread:286009 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fc5fed09a50>
+2020-09-29 21:30:37,905 WARNING MainThread:286009 [wandb_setup.py:__init__():209] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-29 21:30:43,093 INFO    MainThread:286009 [wandb_run.py:_console_start():1134] atexit reg
+2020-09-29 21:30:43,094 INFO    MainThread:286009 [wandb_run.py:_redirect():1009] redirect: SettingsConsole.WRAP
+2020-09-29 21:30:43,094 INFO    MainThread:286009 [wandb_run.py:_redirect():1040] Wrapping output streams.
+2020-09-29 21:30:43,094 INFO    MainThread:286009 [wandb_run.py:_redirect():1056] Redirects installed.
+2020-09-29 21:30:43,096 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:43,100 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:43,121 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:50,758 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:50,759 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:50,828 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:50,836 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:53,951 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:53,953 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:54,021 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:54,030 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:55,207 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:55,209 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:55,273 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:30:55,283 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:30:56,208 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,251 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,253 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,265 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,268 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,268 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,270 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,275 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,310 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,319 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,337 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,345 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,826 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,827 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:02,893 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:02,903 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:03,673 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:03,674 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:03,738 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:03,746 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:04,170 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:04,171 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:04,235 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:04,242 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:05,667 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:05,668 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:05,730 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:05,740 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:07,641 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:07,643 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:07,747 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:07,756 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:17,011 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:17,016 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:17,121 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:17,130 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:32,142 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:32,143 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:32,247 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:32,255 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:37,704 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:38,618 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:38,622 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:38,628 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:39,313 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:39,314 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:39,390 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:39,400 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:39,594 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:39,595 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:39,705 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:39,715 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:40,561 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:40,562 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:40,631 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 21:31:40,642 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 21:31:41,566 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 22:45:26,873 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-29 22:45:26,877 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-29 22:45:26,889 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-30 02:17:14,023 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-30 02:17:14,032 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-30 02:17:14,035 INFO    MainThread:286009 [wandb_init.py:_resume_backend():234] resuming backend
+2020-09-30 02:17:14,038 INFO    MainThread:286009 [wandb_init.py:_pause_backend():229] pausing backend
+2020-09-30 02:17:39,938 INFO    MainThread:286009 [wandb_run.py:_atexit_cleanup():1112] got exitcode: 0
+2020-09-30 02:17:39,938 INFO    MainThread:286009 [wandb_run.py:_restore():1084] restore
+2020-09-30 02:17:39,941 INFO    MainThread:286009 [wandb_run.py:_wait_for_finish():1216] got exit ret: uuid: "a585edcaaf4a4e0baffe5039eb212b56"
+response {
+  poll_exit_response {
+    file_counts {
+      wandb_count: 1
+    }
+    pusher_stats {
+      uploaded_bytes: 903
+      total_bytes: 903
+    }
+  }
+}
+
+2020-09-30 02:17:41,945 INFO    MainThread:286009 [wandb_run.py:_wait_for_finish():1216] got exit ret: uuid: "54779cd51cba4240a3e962d61bcc4c3b"
+response {
+  poll_exit_response {
+    file_counts {
+      wandb_count: 4
+    }
+    pusher_stats {
+      uploaded_bytes: 903
+      total_bytes: 4622
+    }
+  }
+}
+
+2020-09-30 02:17:43,949 INFO    MainThread:286009 [wandb_run.py:_wait_for_finish():1216] got exit ret: uuid: "207df16b8b174803906f61381f0fff7b"
+response {
+  poll_exit_response {
+    file_counts {
+      wandb_count: 4
+    }
+    pusher_stats {
+      uploaded_bytes: 903
+      total_bytes: 4622
+    }
+  }
+}
+
