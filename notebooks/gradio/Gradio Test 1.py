@@ -26,7 +26,7 @@ from augmentation import *
 
 RUN_NAME = '20210303-1849 - arch=tf_efficientnet_b4_ns - samples=1100 frozen=1 epochs=15 bs=48 res=380 _data=combined2'
 
-learn_inf = load_learner(f'../../models/{RUN_NAME}.pkl', cpu=True)
+learn_inf = load_learner(f'{RUN_NAME}.pkl', cpu=True)
 remove_cbs(learn_inf)
 print('Model Loaded.')
 
@@ -47,7 +47,7 @@ def get_sign(img):
 image = gr.inputs.Image(shape=(380,380))
 label = gr.outputs.Label(num_top_classes=3)
 iface = gr.Interface(fn=get_sign, inputs=image, outputs=label)
-iface.launch(share=False)
+iface.launch()
 
 
 
