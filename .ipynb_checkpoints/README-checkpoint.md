@@ -14,6 +14,8 @@ The technical goal was to check the viability of using sota techniques to transl
 
 Our latest model uses an Efficientnet b4, with tensorflow pretrained weights.  We are able to achieve 92% on a third party dataset that was designed specifically to challenge ASL alphabet classifiers. 
 
+An slide overview presentation of the project is available here: https://docs.google.com/presentation/d/1CGssA6PaNyEU4xf-YNqp3lbroWTFlCutIiDqM3pc6yE/edit?usp=sharing
+
 <br>
 
 ## Hardware Used:  RTX 2070 Super (8gb RAM)
@@ -37,6 +39,21 @@ Some Notes on this franken-model:
 4. We built a custom head in order to tune the output and prevent over-fitting.  We narrow the channels substantially as well as increase dropout.  
 5. We use a substantial amount of augmentation and other techniques in order to obfuscate the handsigns during training and force the model to "stretch".  One technique we used was to create shaped (image) dropouts, roughly the size of fingers and colored in skin-tones. 
 6. Partly because of our challenges with homogenous data, we use many regularization techniques:  CutMix, Label Smoothing, dropout, etc
+
+<br>
+
+## Modern Techniques Used
+
+We used many state of the art techniques as well as attempting over 50 training runs using 9 different architectures.  In the end, we decided on a hacked EfficientNet model.  Some of the modifications are listed here: 
+
+* Gradient Checkpointing --> Low-Memory Neural Network Training: A Technical Report 2019 (https://arxiv.org/abs/1904.10631)
+* MaxBlurPool Layer --> Making Convolutional Networks Shift-Invariant Again 2019 (https://arxiv.org/abs/1904.11486)
+* Mish Activation Function --> Mish: A Self Regularized Non-Monotonic Activation Function 2019 (https://arxiv.org/abs/1908.08681)
+* Swish Activation Function --> Searching for Activation Functions 2017 (https://arxiv.org/abs/1710.05941v2)
+* Rectified Adam Optimizer --> On the Variance of Adaptive Learning Rate and Beyond 2019 (https://arxiv.org/abs/1908.03265)
+* Look Ahead Optimizer --> Lookahead Optimizer: k steps forward, 1 step back 2019 (https://arxiv.org/abs/1907.08610)
+* Label Smoothing --> Regularizing Neural Networks by Penalizing Confident Output Distributions 2017 (https://arxiv.org/abs/1701.06548)
+* CutMix --> CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features 2019 (https://arxiv.org/abs/1905.04899)
 
 <br>
 
