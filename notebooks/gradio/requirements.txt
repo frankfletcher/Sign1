@@ -1,8 +1,0 @@
-fastai
-timm
-albumentations
-pytorch
-opencv-python
-numpy
-pandas
-

@@ -1,2 +1,6 @@
 /data/external/**/*
-/data
+/data/
+/models/
+/notebooks/models/
+/notebooks/wandb/
+/notebooks/mlruns/

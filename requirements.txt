@@ -1,8 +1,15 @@
-fastai
+fastai=2.2.5
+fastbook
+pyforest
 timm
 albumentations
 pytorch
+torchvision
 opencv-python
 numpy
 pandas
+matplotlib
+cv2
+gradio
+
 
