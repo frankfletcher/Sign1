@@ -28,7 +28,7 @@ Using a GPU with only 8gb of RAM presented it's own challenges when working with
 <br>
 
 ## Best Model (so far):  pretrained EfficientNet b4
-(https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/20210323-1337-Sign4-EfficientNet-91perc.ipynb)
+(https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/20210323-2340%20-%20Sign4%20-%20EfficientNet-93perc.ipynb)
 
 Some Notes on this franken-model:
 1. see the "Hardware Used" section for how we optimized the model for an older GPU with only 8GB RAM.

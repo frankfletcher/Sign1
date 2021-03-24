@@ -28,7 +28,7 @@ Using a GPU with only 8gb of RAM presented it's own challenges when working with
 <br>
 
 ## Best Model (so far):  pretrained EfficientNet b4
-(https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/20210323-1337-Sign4-EfficientNet-91perc.ipynb)
+(https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/20210323-2340%20-%20Sign4%20-%20EfficientNet-93perc.ipynb)
 
 Some Notes on this franken-model:
 1. see the "Hardware Used" section for how we optimized the model for an older GPU with only 8GB RAM.
@@ -55,13 +55,23 @@ We also set out to create our own data.  We developed a technique to use a webca
 
 Using this technique, we were able to create images at a rate of about 8 frames per second but there were issues.  The webcam interface we used didn't allow us to move from one position to another quickly enough.  That meant that anytime we moved too fast, we had many images with motion blur. 
 
-Without the ability to move from position to position, the images obtained would be even more homogenous.  Because of that, we found it more effective to use a cell phone to video the sign while continuously moving, changing backgrounds, lighting, and sign variations.  We could even walk through different locales while holding the sign.
+Without the ability to move from position to position, the images obtained would be even more homogenous.  Because of that, we found it more effective to use a cell phone to video the sign while continuously moving, changing backgrounds, lighting, and camera angles, and sign variations.  We could even walk through different locales while holding the sign.
 
 To process these videos, we developed several small utilities:
 1. Loop through all character videos and explode them into images (https://github.com/cogsci2/Sign1/tree/master/notebooks/utils/ExplodeVideo.ipynb)
 2. Create a new sub-datgaset from a larger dataset: (https://github.com/cogsci2/Sign1/tree/master/notebooks/utils/DatasetCuller.ipynb)
 
 as well as some others.
+
+We tried hard to vary the data as much as we could within our limited means:
+* 3 different people with different skin tones and both sexes represented
+* Multi colored indoor lighting - tungsten, flourescent, etc
+* Very bright sunlight, outdoors
+* Very strong backlighting
+* With almost no ambient light
+* illumination from only a laptop screen
+* mutiple colored kitchen gloves (decrease the dependency on skin tones)
+* signing in front of a desktop screen with many hands in the background
 
 ## Data - Augmentation / Obfuscation
 
@@ -71,7 +81,7 @@ We really tried to challenge the models.  Most of the time, the models barely bl
 
 ## Model Deployment: Webcam and Gradio
 
-We developed a webcam deployment, primarily using OpenCV.  This deployment allows for semi-realtime interaction with the model.  (https://github.com/cogsci2/Sign1/blob/master/notebooks/OpenCV_cam_test.ipynb)
+We developed a webcam deployment, using OpenCV.  This deployment allows for semi-realtime interaction with the model.  (https://github.com/cogsci2/Sign1/blob/master/notebooks/OpenCV_cam_test.ipynb)
 
 We also deployed the model to the web, using Gradio.  This allows anybody with a web browswer (desktop, laptop or cel phone) the ability to upload a snapshot and get the English translation back.  Basically, this is a dictionary-type reference system.
 
