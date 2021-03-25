@@ -11,13 +11,13 @@ blis==0.7.4
 brotlipy==0.7.0
 cairocffi==1.1.0
 catalogue==2.0.1
-certifi==2020.12.5
-cffi==1.14.2
-chardet==4.0.0
+#certifi==2020.12.5
+#cffi==1.14.2
+#chardet==4.0.0
 click==7.1.2
 colorama==0.4.4
 conda==4.9.2
-cryptography==3.4.6
+#cryptography==3.4.6
 cycler==0.10.0
 cymem==2.0.5
 decorator==4.4.2
@@ -37,7 +37,7 @@ Flask-CacheBuster==1.0.0
 Flask-Cors==3.0.10
 ghapi==0.1.16
 gradio==1.6.4
-idna==2.1.0
+#idna==2.1.0
 imageio==2.9.0
 imgaug==0.4.0
 ipykernel==5.5.0
@@ -87,7 +87,7 @@ prometheus-client==0.9.0
 prompt-toolkit==3.0.18
 ptyprocess==0.7.0
 pycosat==0.6.3
-pycparser==2.20
+#pycparser==2.20
 pydantic==1.7.3
 pyforest==1.0.3
 Pygments==2.8.1
@@ -112,7 +112,7 @@ scipy==1.6.2
 Send2Trash==1.5.0
 sentencepiece==0.1.95
 Shapely==1.7.1
-six==1.15.0
+#six==1.15.0
 smart-open==3.0.0
 SoundFile==0.10.3.post1
 spacy==3.0.5
@@ -131,7 +131,7 @@ tqdm==4.59.0
 traitlets==5.0.5
 typer==0.3.2
 typing-extensions==3.7.4.3
-urllib3==1.26.4
+#urllib3==1.26.4
 virtualenv==20.0.31
 wasabi==0.8.2
 wcwidth==0.2.5
