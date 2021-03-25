@@ -238,3 +238,20 @@ def remove_cbs(le):
     le.remove_cbs(EarlyStoppingCallback)
     le.remove_cbs(GradientAccumulation)
     return _cbs
+
+import gc
+
+
+def cleanup():
+    cleaner = None
+    test_learn = None
+    inputs = None
+    preds = None
+    interp = None
+    targs = None
+    decoded = None
+    losses = None
+    # learn = None
+
+    torch.cuda.empty_cache()
+    gc.collect()
