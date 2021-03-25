@@ -3,6 +3,10 @@ Sign1
 
 Classification of the ASL Alphabet with deployment to webcam ("realtime") as well as offline/online (images) at http://gradio.app
 
+![Video of ASL classification](https://github.com/cogsci2/Sign1/blob/master/reports/videos/20210325%20Sign1%20Webcam%20test1-2021-03-25_15.29.20.gif)
+
+<br>
+
 ## The Challenge: To create a model to translate ASL alphabet signs to written characters
 
 The technical goal was to check the viability of using sota techniques to translate ASL into written English characters.  Based on the success of this experiment, we think it may be possible to use naive-but-modern CNN models for ASL recognition.
@@ -16,7 +20,7 @@ Our latest model uses an Efficientnet b4, with tensorflow pretrained weights.  W
 
 An slide overview presentation of the project is available here: https://docs.google.com/presentation/d/1CGssA6PaNyEU4xf-YNqp3lbroWTFlCutIiDqM3pc6yE/edit?usp=sharing
 
-![Video of ASL classification](https://github.com/cogsci2/Sign1/blob/master/reports/videos/20210325%20Sign1%20Webcam%20test1-2021-03-25_15.29.20.gif)
+
 <br>
 
 ## Hardware Used:  RTX 2070 Super (8gb RAM)
