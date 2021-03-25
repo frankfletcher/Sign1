@@ -16,7 +16,7 @@ catalogue==2.0.1
 #chardet==4.0.0
 click==7.1.2
 colorama==0.4.4
-conda==4.9.2
+#conda==4.9.2
 #cryptography==3.4.6
 cycler==0.10.0
 cymem==2.0.5
@@ -102,7 +102,7 @@ PyWavelets==1.1.1
 PyYAML==5.4.1
 pyzmq==22.0.3
 qtconsole==5.0.3
-qtile==0.16.2.dev29+gf7c212db
+#qtile==0.16.2.dev29+gf7c212db
 QtPy==1.9.0
 requests==2.25.1
 resampy==0.2.2
