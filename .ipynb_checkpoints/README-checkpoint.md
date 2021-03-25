@@ -16,6 +16,7 @@ Our latest model uses an Efficientnet b4, with tensorflow pretrained weights.  W
 
 An slide overview presentation of the project is available here: https://docs.google.com/presentation/d/1CGssA6PaNyEU4xf-YNqp3lbroWTFlCutIiDqM3pc6yE/edit?usp=sharing
 
+![Video of ASL classification](https://github.com/cogsci2/Sign1/blob/master/reports/videos/20210325%20Sign1%20Webcam%20test1-2021-03-25_15.29.20.mp4?raw=true)
 <br>
 
 ## Hardware Used:  RTX 2070 Super (8gb RAM)
