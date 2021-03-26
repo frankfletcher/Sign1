@@ -45,6 +45,8 @@ Some Notes on this franken-model:
 5. We use a substantial amount of augmentation and other techniques in order to obfuscate the handsigns during training and force the model to "stretch".  One technique we used was to create shaped (image) dropouts, roughly the size of fingers and colored in skin-tones. 
 6. Partly because of our challenges with homogenous data, we use many regularization techniques:  CutMix, Label Smoothing, dropout, etc
 
+We achieve similar results (~92%) using EfficientNet Lite4 which is more feasible to deploy to Mobile phones.
+
 <br>
 
 ## Modern Techniques Used
