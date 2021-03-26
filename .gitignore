@@ -4,3 +4,4 @@
 /notebooks/models/
 /notebooks/wandb/
 /notebooks/mlruns/
+/gr_env/
