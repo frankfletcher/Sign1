@@ -1,4 +1,4 @@
-albumentations==0.5.2
+git+https://github.com/albumentations-team/albumentations
 analytics-python==1.2.9
 appdirs==1.4.4
 argon2-cffi==20.1.0
@@ -135,5 +135,6 @@ wasabi==0.8.2
 wcwidth==0.2.5
 webencodings==0.5.1
 Werkzeug==1.0.1
+wheel==0.36.2
 widgetsnbextension==3.5.1
 xcffib==0.10.1
