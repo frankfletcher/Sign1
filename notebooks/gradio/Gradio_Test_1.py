@@ -415,6 +415,15 @@ image = gr.inputs.Image(shape=(380,380), tool='select')
 # image = gr.inputs.Image(shape=None)
 
 label = gr.outputs.Label(num_top_classes=3)
-iface = gr.Interface(fn=get_sign, inputs=image, outputs=label)
+iface = gr.Interface(fn=get_sign, inputs=image, outputs=label, title='ASL Alphabet Recognition', 
+                     description='''This app translates ASL Finger-spelling signs to written characters.  
+                     \n\n
+                     "J" and "Z" are not yet implemented.''', article='''
+<button><a href="https://github.com/cogsci2/Sign1/">Source code (github)</a></button>
+<p>
+<button><a href="https://www.linkedin.com/in/frank-fletcher">Frank Fletcher@LinkedIn</a></button>
+<p>
+<img src="https://lh3.googleusercontent.com/proxy/p1UxDAg59KYK_GcnJczPMWp01IKsRx8JkWpnlQQbO_ThkmVrk7-KGGXHkLc9abAK1LzGMZhjfA_XwPfxruBgf_U" alt="Dictionary of Signs"/>
+''')
 iface.launch(share=True)
 
