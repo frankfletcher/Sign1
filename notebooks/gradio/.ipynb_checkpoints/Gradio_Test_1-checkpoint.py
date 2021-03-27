@@ -278,7 +278,7 @@ class AlbumentationsTransform(RandTransform):
         return PILImage.create(aug_img)
     
     
-def get_train_aug(RESOLUTION=300): 
+def get_train_aug(RESOLUTION=380): 
     return A.Compose([
         A.LongestMaxSize(max_size=RESOLUTION*2, interpolation=cv2.INTER_CUBIC, \
                          always_apply=True),
@@ -355,8 +355,8 @@ def get_valid_aug(RESOLUTION=380):
         A.LongestMaxSize(max_size=RESOLUTION, interpolation=cv2.INTER_CUBIC, \
                          always_apply=True),
         A.PadIfNeeded(min_height=RESOLUTION, min_width=RESOLUTION, always_apply=True, border_mode=cv2.BORDER_CONSTANT),
-#         A.Resize(RESOLUTION, RESOLUTION, p=1.0, interpolation=cv2.INTER_CUBIC),  
-        A.HorizontalFlip(p=0.5),
+        A.Resize(RESOLUTION, RESOLUTION, p=1.0, interpolation=cv2.INTER_CUBIC),  
+#         A.HorizontalFlip(p=0.5),
         A.FancyPCA(p=1.0, alpha=0.5),
         A.HueSaturationValue(
             hue_shift_limit=0.1, 
@@ -404,9 +404,16 @@ labels.remove('Z')
 
 def get_sign(img):
     pred,pred_idx,probs = learn_inf.predict(img)
+    print(pred)
+    print(probs)
     return {labels[i]: float(probs[i]) for i in range(len(labels))}
+
+#     preds, targs = learn_inf.tta(img)
  
-image = gr.inputs.Image(shape=(380,380))
+image = gr.inputs.Image(shape=(380,380), tool='select')
+# image = gr.inputs.Image(shape=None, tool='select')
+# image = gr.inputs.Image(shape=None)
+
 label = gr.outputs.Label(num_top_classes=3)
 iface = gr.Interface(fn=get_sign, inputs=image, outputs=label)
 iface.launch(share=True)
