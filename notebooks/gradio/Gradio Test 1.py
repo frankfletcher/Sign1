@@ -378,7 +378,14 @@ def get_valid_aug(RESOLUTION=380):
 
 
 
-RUN_NAME = '20210323-1337 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d' 
+
+RUN_NAME = '20210323-1337 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d'
+
+# with help from Ali Abid @ Gradio
+dir = os.path.dirname(__file__)
+RUN_NAME = os.path.join(dir, RUN_NAME)
+learn_inf = load_learner(f'{RUN_NAME}.pkl', cpu=True)
+
 
 #'20210303-1849 - arch=tf_efficientnet_b4_ns - samples=1100 frozen=1 epochs=15 bs=48 res=380 _data=combined2'
 
