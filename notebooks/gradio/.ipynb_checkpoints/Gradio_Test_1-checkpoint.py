@@ -34,31 +34,11 @@ from torch.nn import functional as F
 import albumentations as A
 import cv2
 
-########################################### contents of nn_utils_eff and augmentation
+import pytz
+from pytz import timezone
 
 
-
-
-
-
-def show_cuda_status():
-    import torch
-    print('CUDA available: '.ljust(28), torch.cuda.is_available())
-    print('CUDA device count: '.ljust(28), torch.cuda.device_count())
-
-    current_device = torch.cuda.current_device()
-    print('Current CUDA Device index: '.ljust(28), current_device)
-    # torch.cuda.device(current_device)
-    print('Current CUDA Device: '.ljust(28), torch.cuda.get_device_name(current_device))
-    print()
-    # print('CUDA available: '.ljust(24), torch.cuda.is_available())
-    print(f'fastai version:              {fastai.__version__}')
-    # print(f'fastcore version:            {fastcore.__version__}')
-    # print(f'fastbook version:            {fastbook.__version__}')
-    print(f'cuda version:                {torch.version.cuda}')
-    print(f'torch version:               {torch.__version__}')
-    # print(f'python version:              {python_version()}')
-    
+########################################### contents of nn_utils_eff and augmentation 
     
 
 
@@ -356,7 +336,7 @@ def get_valid_aug(RESOLUTION=380):
                          always_apply=True),
         A.PadIfNeeded(min_height=RESOLUTION, min_width=RESOLUTION, always_apply=True, border_mode=cv2.BORDER_CONSTANT),
         A.Resize(RESOLUTION, RESOLUTION, p=1.0, interpolation=cv2.INTER_CUBIC),  
-#         A.HorizontalFlip(p=0.5),
+        A.HorizontalFlip(p=0.5),
         A.FancyPCA(p=1.0, alpha=0.5),
         A.HueSaturationValue(
             hue_shift_limit=0.1, 
@@ -378,39 +358,62 @@ def get_valid_aug(RESOLUTION=380):
 
 
 
+# RUN_NAME1 = '20210323-0353 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=5 bs=48 res=380 _data=combined4_with_overflow_all_d' OK
+RUN_NAME1 = '20210321-0349 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=48 bs=48 res=380 _data=combined4_with_overflow_all_d-gradio'
+#RUN_NAME1_EPOCH = 3 # 20210323-0353 OK
+# RUN_NAME1_EPOCH = 20
 
-# RUN_NAME = '20210323-1337 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d'
-
-RUN_NAME = '20210323-2340 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d'
-
+RUN_NAME2 = '20210323-1337 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d'
 
 # with help from Ali Abid @ Gradio
 dir = os.path.dirname(__file__)
-RUN_NAME = os.path.join(dir, RUN_NAME)
-learn_inf = load_learner(f'{RUN_NAME}.pkl', cpu=True)
+RUN_NAME1 = os.path.join(dir, RUN_NAME1)
+RUN_NAME2 = os.path.join(dir, RUN_NAME2)
+
+learn_inf1 = load_learner(f'{RUN_NAME1}.pkl', cpu=True)
+# load_model(f'{RUN_NAME1}_{RUN_NAME1_EPOCH}.pth', learn_inf1, opt=ranger, with_opt=False)
+remove_cbs(learn_inf1)
+learn_inf1.remove_cbs([NonNativeMixedPrecision, ModelToHalf])
+
+learn_inf2 = load_learner(f'{RUN_NAME2}.pkl', cpu=True)
+remove_cbs(learn_inf2)
+learn_inf2.remove_cbs([NonNativeMixedPrecision, ModelToHalf])
 
 
-#'20210303-1849 - arch=tf_efficientnet_b4_ns - samples=1100 frozen=1 epochs=15 bs=48 res=380 _data=combined2'
-
-learn_inf = load_learner(f'{RUN_NAME}.pkl', cpu=True)
-remove_cbs(learn_inf)
-# print('Model Loaded.')
-
-learn_inf.remove_cbs([NonNativeMixedPrecision, ModelToHalf])
 
 labels = [char for char in ascii_uppercase]
 labels.remove('J')
 labels.remove('Z')
 
 def get_sign(img):
-    pred,pred_idx,probs = learn_inf.predict(img)
-    print(pred)
-    print(probs)
-    return {labels[i]: float(probs[i]) for i in range(len(labels))}
+    pred1a,pidx1a,probs1a = learn_inf1.predict(img)
+    pred1b,pidx1b,probs1b = learn_inf1.predict(img)
+    pred1c,pidx1c,probs1c = learn_inf1.predict(img)
+    
+    pred2a,pidx2a,probs2a = learn_inf2.predict(img)
+#     pred2b,pidx2b,probs2b = learn_inf2.predict(img)
+#     pred2c,pidx2c,probs2c = learn_inf2.predict(img)
+    
+    probsall = [(a + b + c + d) / 4 for a,b,c,d in zip(probs1a, probs1b, probs1c, probs2a)]  # 2 generalizes better - we weight it extra
+       
+    print(f'Time: {datetime.now(tz=pytz.utc).astimezone(timezone("US/Pacific")).strftime("%H:%M:%S")}')
+    print(f'1a:  {pred1a} - {np.round(probs1a[pidx1a].item(),3)} - {[np.round(f.item(),3) for f in probs1a]}')
+    print(f'1b:  {pred1b} - {np.round(probs1b[pidx1b].item(),3)} - {[np.round(f.item(),3) for f in probs1b]}')
+    print(f'1c:  {pred1c} - {np.round(probs1c[pidx1c].item(),3)} - {[np.round(f.item(),3) for f in probs1c]}')
+    
+    print(f'2a:  {pred2a} - {np.round(probs2a[pidx2a].item(),3)} - {[np.round(f.item(),3) for f in probs2a]}')
+#     print(f'2b:  {pred2b} - {np.round(probs2b[pidx2b].item(),3)} - {[np.round(f.item(),3) for f in probs2b]}')
+#     print(f'2c:  {pred2c} - {np.round(probs2c[pidx2c].item(),3)} - {[np.round(f.item(),3) for f in probs2c]}')
+
+    print(f'all: {labels[np.argmax(probsall)]} - {np.round(probsall[np.argmax(probsall)].item(),3)} - {[np.round(f.item(),3) for f in probsall]}')
+    print('--------')
+          
+
+    return {labels[i]: float(probsall[i]) for i in range(len(labels))}
 
 #     preds, targs = learn_inf.tta(img)
  
-image = gr.inputs.Image(shape=(380,380), tool='select')
+image = gr.inputs.Image(shape=(760,760), tool='select')
 # image = gr.inputs.Image(shape=None, tool='select')
 # image = gr.inputs.Image(shape=None)
 
@@ -419,10 +422,46 @@ iface = gr.Interface(fn=get_sign, inputs=image, outputs=label, title='ASL Alphab
                      description='''This app translates ASL Finger-spelling signs to written characters.  
                      \n\n
                      "J" and "Z" are not yet implemented.''', article='''
-<button><a href="https://github.com/cogsci2/Sign1/">Source code (github)</a></button>
-<p>
-<button><a href="https://www.linkedin.com/in/frank-fletcher">Frank Fletcher@LinkedIn</a></button>
-<p>
+
+<style>
+.button:hover {
+    background-color: #FF9911;
+
+}
+.button {
+    border:2px solid black;
+    background-color: #DD7700;
+    color:white;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    width:240px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+    document.getElementById("sourceButton").onclick = function () {
+    document.getElementById("blankSourceID").click();
+    };
+    
+    document.getElementById("linkedinButton").onclick = function () {
+    document.getElementById("blankLinkedinID").click();
+    };    
+</script> 
+
+<br/>
+<a id="blankSourceID" href="https://github.com/cogsci2/Sign1/" target="_blank"></a>
+<a id="blankLinedinID" href="https://www.linkedin.com/in/frank-fletcher" target="_blank"></a>
+
+<button id="sourceButton" type="button" class="button buttonsource">Source code (github)</button>
+<button id="linkedinButton" type="button" class="button buttonlinkedin">Frank Fletcher @LinkedIn</button>
+<br/>
+<br/>
 <img src="https://lh3.googleusercontent.com/proxy/p1UxDAg59KYK_GcnJczPMWp01IKsRx8JkWpnlQQbO_ThkmVrk7-KGGXHkLc9abAK1LzGMZhjfA_XwPfxruBgf_U" alt="Dictionary of Signs"/>
 ''')
 iface.launch(share=True)
