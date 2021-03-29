@@ -462,7 +462,7 @@ iface = gr.Interface(fn=get_sign, inputs=image, outputs=label, title='ASL Alphab
 <button id="linkedinButton" type="button" class="button buttonlinkedin">Frank Fletcher @LinkedIn</button>
 <br/>
 <br/>
-<img src="https://lh3.googleusercontent.com/proxy/p1UxDAg59KYK_GcnJczPMWp01IKsRx8JkWpnlQQbO_ThkmVrk7-KGGXHkLc9abAK1LzGMZhjfA_XwPfxruBgf_U" alt="Dictionary of Signs"/>
+<img src="https://www.wpclipart.com/sign_language/American_Sign_Language_Alphabet.jpg" alt="Dictionary of Signs"/>
 ''')
 iface.launch(share=True)
 
