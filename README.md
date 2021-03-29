@@ -1,7 +1,7 @@
 Sign1
 ==============================
 
-Classification of the ASL Alphabet with deployment to webcam ("realtime") as well as offline/online (images) at http://gradio.app
+Classification of the ASL Alphabet with deployment to webcam ("realtime" video) as well as an interactive online demo (images) at https://gradio.app/g/cogsci2/Sign1
 
 ![Video of ASL classification](https://github.com/cogsci2/Sign1/blob/master/reports/videos/20210325%20Sign1%20Webcam%20test1-2021-03-25_15.29.20.gif)
 
@@ -18,7 +18,7 @@ The technical goal was to check the viability of using sota techniques to transl
 
 Our latest model uses an Efficientnet b4, with tensorflow pretrained weights.  We are able to achieve 92% on a third party dataset that was designed specifically to challenge ASL alphabet classifiers. 
 
-An slide overview presentation of the project is available here: https://docs.google.com/presentation/d/1CGssA6PaNyEU4xf-YNqp3lbroWTFlCutIiDqM3pc6yE/edit?usp=sharing
+A slide overview of the project is available here: https://docs.google.com/presentation/d/1CGssA6PaNyEU4xf-YNqp3lbroWTFlCutIiDqM3pc6yE/edit?usp=sharing
 
 
 <br>
@@ -45,13 +45,13 @@ Some Notes on this franken-model:
 5. We use a substantial amount of augmentation and other techniques in order to obfuscate the handsigns during training and force the model to "stretch".  One technique we used was to create shaped (image) dropouts, roughly the size of fingers and colored in skin-tones. 
 6. Partly because of our challenges with homogenous data, we use many regularization techniques:  CutMix, Label Smoothing, dropout, etc
 
-We achieve similar results (~92%) using EfficientNet Lite4 which is more feasible to deploy to Mobile phones. (https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/Sign4%20-%20EfficientNetLITE.ipynb)
+We achieve similar results (~92%) using EfficientNet Lite4 which is a more feasible model to deploy to mobile phones. (https://github.com/cogsci2/Sign1/blob/master/notebooks/Archive/Sign4%20-%20EfficientNetLITE.ipynb)
 
 <br>
 
 ## Modern Techniques Used
 
-We used many state of the art techniques as well as attempting over 50 training runs using 9 different architectures.  In the end, we decided on a hacked EfficientNet model.  Some of the modifications are listed here: 
+We used many state of the art techniques as well as attempting over 50 training runs using 9 different architectures.  In the end, we decided on a modified EfficientNet architecture.  Some of the modifications are listed here: 
 
 * Gradient Checkpointing --> Low-Memory Neural Network Training: A Technical Report 2019 (https://arxiv.org/abs/1904.10631)
 * MaxBlurPool Layer --> Making Convolutional Networks Shift-Invariant Again 2019 (https://arxiv.org/abs/1904.11486)
@@ -77,7 +77,7 @@ https://www.kaggle.com/danrasband/asl-alphabet-test
 
 We also set out to create our own data.  We developed a technique to use a webcam to capture image frames and label them - this was done by pressing a character on the keyboard while making a sign.  The image was saved to disk and automatically labelled based on the character that was pressed.  
 
-Using this technique, we were able to create images at a rate of about 8 frames per second but there were issues.  The webcam interface we used didn't allow us to move from one position to another quickly enough.  That meant that anytime we moved too fast, we had many images with motion blur. 
+Using this technique, we were able to create images at a rate of about 8 frames per second but there were issues.  The webcam interface we used didn't allow us to move from one position to another quickly enough; anytime we moved too fast, we had many images with motion blur. 
 
 Without the ability to move from position to position, the images obtained would be even more homogenous.  Because of that, we found it more effective to use a cell phone to video the sign while continuously moving, changing backgrounds, lighting, and camera angles, and sign variations.  We could even walk through different locales while holding the sign.
 
@@ -87,7 +87,7 @@ To process these videos, we developed several small utilities:
 
 as well as some others.
 
-We tried hard to vary the data as much as we could within our limited means:
+We tried hard to vary our internal data as much as we could within our means:
 * 3 different people with different skin tones and both sexes represented
 * Multi colored indoor lighting - tungsten, flourescent, etc
 * Very bright sunlight, outdoors
