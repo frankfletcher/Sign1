@@ -385,6 +385,13 @@ labels = [char for char in ascii_uppercase]
 labels.remove('J')
 labels.remove('Z')
 
+def get_sentence(str_sent):
+    word_imgs = []
+    for c,i in zip(str_sent, range(len(str_sent))):
+        if c == ' ':  # change to vertical by extending the list
+            
+        
+
 def get_sign(img):
     pred1a,pidx1a,probs1a = learn_inf1.predict(img)
     pred1b,pidx1b,probs1b = learn_inf1.predict(img)
@@ -463,6 +470,9 @@ iface = gr.Interface(fn=get_sign, inputs=image, outputs=label, title='ASL Alphab
 <br/>
 <br/>
 <img src="https://www.wpclipart.com/sign_language/American_Sign_Language_Alphabet.jpg" alt="Dictionary of Signs"/>
+<br/>
+This model is also deployable as a "realtime" webcam application.
+
 ''')
 iface.launch(share=True)
 

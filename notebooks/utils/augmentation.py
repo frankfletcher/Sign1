@@ -198,8 +198,8 @@ def get_valid_aug(RESOLUTION=380):
         A.LongestMaxSize(max_size=RESOLUTION, interpolation=cv2.INTER_CUBIC, \
                          always_apply=True),
         A.PadIfNeeded(min_height=RESOLUTION, min_width=RESOLUTION, always_apply=True, border_mode=cv2.BORDER_CONSTANT),
-#         A.Resize(RESOLUTION, RESOLUTION, p=1.0, interpolation=cv2.INTER_CUBIC),  
-        A.HorizontalFlip(p=0.5),
+        A.Resize(RESOLUTION, RESOLUTION, p=1.0, interpolation=cv2.INTER_CUBIC),  
+#         A.HorizontalFlip(p=0.5),
         A.FancyPCA(p=1.0, alpha=0.5),
         A.HueSaturationValue(
             hue_shift_limit=0.1, 
