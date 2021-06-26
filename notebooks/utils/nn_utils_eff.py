@@ -1,5 +1,5 @@
 from datetime import datetime
-from fastbook import *
+# from fastbook import *
 from fastai.vision.all import *
 from fastai.vision.widgets import *
 import fastai
@@ -131,7 +131,9 @@ class CheckpointModule(Module):
             return checkpoint_sequential(self.module, self.num_segments, *inputs)
         else:
             return checkpoint(self.module, *inputs)
-        
+
+
+
         
     
 def convert_seq_chkpt(model, layer_type_old=nn.Sequential):  
@@ -153,6 +155,8 @@ def convert_seq_chkpt(model, layer_type_old=nn.Sequential):
 #             print(segments)
 
     return model
+
+
 
 
 

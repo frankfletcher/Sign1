@@ -1,6 +1,6 @@
 import albumentations as A
 from fastai.vision import *
-from fastbook import *
+# from fastbook import *
 from fastai.vision.all import *
 from fastai.vision.widgets import *
 import cv2
