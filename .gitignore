@@ -6,3 +6,6 @@
 /notebooks/mlruns/
 /gr_env/
 /gr1/
+/**/__pycache__/
+/**/wandb/
+**/.ipynb_checkpoints/
