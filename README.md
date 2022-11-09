@@ -13,7 +13,7 @@ The technical goal was to check the viability of using sota techniques to transl
 
 <br>
 
-## Project Status:  Active.  
+## Project Status:  Backburner.  
 ### (Prototype Successful)
 
 Our latest model uses an Efficientnet b4, with tensorflow pretrained weights.  We are able to achieve 92% on a third party dataset that was designed specifically to challenge ASL alphabet classifiers. 
